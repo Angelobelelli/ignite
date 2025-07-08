@@ -1,23 +1,12 @@
 version: '3.3'
 
 services:
-
-  psql:
-    image: postgres:11.12
-    container_name: authorization-postgres
+  api-solid-pg:
+    image: bitnami/postgresql
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=postgresDb
-      - POSTGRES_USER=postgresUser
-      - POSTGRES_PASSWORD=postgresPassword
-      - POSTGRESQL_ENABLE_REMOTE_CONNECTIONS=yes
-    networks:
-      - blitech-net
-
-networks:
-  blitech-net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.18.1.0/24
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: apisolid
+   

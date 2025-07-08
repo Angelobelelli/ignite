@@ -4,7 +4,7 @@ Gympass style app
 
 ## RFs (Requisitos Funcionais)
 
-- [ ] Deve ser possivel se cadastrar;
+- [x] Deve ser possivel se cadastrar;
 - [ ] Deve ser possivel realizar login;
 - [ ] Deve ser possivel obter o perfil de um usuario logado;
 - [ ] Deve ser possivel obter o numero de check-ins realizados pelo usuario logado;
@@ -17,7 +17,7 @@ Gympass style app
 
 ## RNs (Regras de Negócio)
 
-- [] O usuario não deve poder se cadastrar com um email ja existente;
+- [x] O usuario não deve poder se cadastrar com um email ja existente;
 - [] O usuario não pode fazer 2 check-ins no mesmo dia;
 - [] O usuario não pode fazer check-ins se não estiver perto (100m) da academia;
 - [] O check-in só pode ser validado até 20 minutos após criado;

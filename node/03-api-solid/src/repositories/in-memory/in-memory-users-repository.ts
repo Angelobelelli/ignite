@@ -1,0 +1,23 @@
+import { User, Prisma } from '@prisma/client'
+import { UserRepository } from '../users-repository'
+
+export class InMemoryUsersRepository implements UserRepository {
+  public items: User[] = []
+
+  async findByEmail(email: string) {
+    const user = this.items.find(item => item.email === email)
+    return user || null
+  }
+
+  async create(data: Prisma.UserCreateInput) {
+    const user = {
+      id: String(this.items.length + 1), // ou use um uuid
+      name: data.name,
+      email: data.email,
+      password_hash: data.password_hash,
+      created_at: new Date(),
+    } as User
+    this.items.push(user)
+    return user
+  }
+}
