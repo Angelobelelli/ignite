@@ -12,9 +12,13 @@ interface RegisterUseCaseResponse {
   user: User
 }
 export class RegisterUseCase {
-  constructor(private userRepository:  UserRepository) {}
+  constructor(private userRepository: UserRepository) {}
 
-  async execute({ name, email, password }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
+  async execute({
+    name,
+    email,
+    password,
+  }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
     const password_hash = await hash(password, 6)
 
     const userWithSameEmail = await this.userRepository.findByEmail(email)
