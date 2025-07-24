@@ -17,14 +17,14 @@ model User {
   password_hash String
   created_at    DateTime @default(now())
 
-  checkIns Checkin[]
+  checkIns CheckIn[]
 
   @@map("users")
 }
 
-model Checkin {
+model CheckIn {
   id           String    @id @default(uuid())
-  createdAt    DateTime  @default(now())
+  created_at    DateTime  @default(now())
   validated_at DateTime?
   gym          Gym       @relation(fields: [gym_id], references: [id])
   gym_id       String
@@ -43,7 +43,7 @@ model Gym {
   latitude    Decimal?
   longitude   Decimal?
 
-  checkIns Checkin[]
+  checkIns CheckIn[]
 
   @@map("gyms")
 }
