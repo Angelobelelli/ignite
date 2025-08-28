@@ -14,8 +14,8 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "build": "tsup src --out-dir build",
-    "start": "node build/server.js",
+    "build": "tsup src",
+    "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "test": "vitest run",
     "test:watch": "vitest",
