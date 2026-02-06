@@ -28,7 +28,7 @@ describe('Authenticate Use Case', () => {
   })
 
   it('should not be able to register with invalid email', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'Angelobelelli@gmail',
         password: '123456',
